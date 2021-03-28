@@ -19,7 +19,8 @@ def make_graph(ticker_name, type_of_graph)
 
     df_API = pd.DataFrame.from_dict(
         response.json()['Time Series (Daily)'], 
-        orient='index')
+        orient='index'
+    )
 
     df_API.columns=['open', 'high', 'low', 'close', 'adjusted close', 'volume', 'dividend amount', 'split coefficient']      
 
@@ -30,9 +31,15 @@ def make_graph(ticker_name, type_of_graph)
     x = df_API.index.tolist()
     y = df_API[type_of_graph].tolist()
 
-    p = figure(title="Stock Price at " + type_of_graph, x_axis_label='Month and Year', y_axis_label='Stock Price in USD', x_axis_type='datetime')
+    p = figure(
+        title="Stock Price at " + type_of_graph, 
+        x_axis_label='Month and Year', 
+        y_axis_label='Stock Price in USD', 
+        x_axis_type='datetime'
+    )
     p.line(x, y, line_width=2)
     return p
+
 
 @app.route('/')
 def index():
