@@ -7,6 +7,8 @@ def index():
   if request.method == 'POST':
       result = request.form
       return render_template('index.html',result = result)
+  else:
+    return render_template('index.html')
 
 @app.route('/about')
 def about():
