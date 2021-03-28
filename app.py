@@ -4,7 +4,7 @@ import json
 from dotenv import dotenv_values
 import pandas as pd
 from bokeh.plotting import figure, show
-from .alpha_vantage import make_graph
+import .alpha_vantage# import make_graph
 
 
 app = Flask(__name__)
