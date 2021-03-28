@@ -4,6 +4,7 @@ import json
 from dotenv import dotenv_values
 import pandas as pd
 from bokeh.plotting import figure, show
+import os
 #import alpha_vantage# import make_graph
 
 
@@ -11,7 +12,7 @@ app = Flask(__name__)
 
 def make_graph(ticker, type_of_graph)
 
-    key = VANTAGEAPI
+    key = os.environ['VANTAGEAPI']
     url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol={}&apikey={}'.format(ticker, key)
     response = requests.get(url)
 
