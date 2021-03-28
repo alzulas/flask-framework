@@ -5,6 +5,7 @@ from dotenv import dotenv_values
 import pandas as pd
 from bokeh.plotting import figure, show
 from bokeh.embed import components
+from bokeh.models import HoverTool
 import os
 #import alpha_vantage# import make_graph
 
@@ -41,7 +42,6 @@ def result():
 
         df_API.index = pd.to_datetime(df_API.index, format='%Y/%m/%d')
         df_API[type_of_graph] = pd.to_numeric(df_API[type_of_graph])
-        print(df_API.head())
 
         x = df_API.index.tolist()
         y = df_API[type_of_graph].tolist()
@@ -53,9 +53,9 @@ def result():
             x_axis_type='datetime'
         )
         p.line(x, y, line_width=2)
+        p.add_tools(HoverTool())
         script, div = components(p)
-        show(p)
-        return render_template("result.html",result = result, the_div=div, the_script=script)
+        return render_template("result.html",result = result, the_div=div, the_script=script), p
 
 if __name__ == '__main__':
     app.run(port=33507)
