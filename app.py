@@ -54,7 +54,7 @@ def result():
         )
         p.line(x, y, line_width=2)
         script, div = components(p)
-        p.show()
+        show(p)
         return render_template("result.html",result = result, the_div=div, the_script=script)
 
 if __name__ == '__main__':
