@@ -20,9 +20,9 @@ def about():
 
 @app.route('/result',methods = ['POST', 'GET'])
 def result():
-    print(result.method)
+    print(request.method)
     if request.method == 'POST':
-        result = request.form
+        results = request.form
         #print(result)
         #plot = make_graph(ticker_name, type_of_graph)
         #script, div = components(plot)
