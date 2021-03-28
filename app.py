@@ -55,7 +55,8 @@ def result():
         p.line(x, y, line_width=2)
         p.add_tools(HoverTool())
         script, div = components(p)
-        return p
+        print(script)
+        return render_template("result.html",result = result, the_div=div, the_script=script)
 
 if __name__ == '__main__':
     app.run(port=33507)
