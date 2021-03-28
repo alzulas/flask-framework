@@ -2,13 +2,9 @@ from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
-@app.route('/',methods = ['POST'])
+@app.route('/')
 def index():
-  if request.method == 'POST':
-      result = request.form
-      return render_template('index.html',result = result)
-  else:
-    return render_template('index.html')
+  return render_template('index.html')
 
 @app.route('/about')
 def about():
