@@ -4,6 +4,7 @@ import json
 from dotenv import dotenv_values
 import pandas as pd
 from bokeh.plotting import figure, show
+from bokeh.embed import components
 import os
 #import alpha_vantage# import make_graph
 
