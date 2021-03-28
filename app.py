@@ -41,7 +41,6 @@ def result():
 
         df_API.index = pd.to_datetime(df_API.index, format='%Y/%m/%d')
         df_API[type_of_graph] = pd.to_numeric(df_API[type_of_graph])
-        df_API.info()
 
         x = df_API.index.tolist()
         y = df_API[type_of_graph].tolist()
