@@ -27,6 +27,7 @@ def result():
         #script, div = components(plot)
         ticker = request.form.get("ticker")
         key = os.environ['VANTAGEAPI']
+        type_of_graph = request.form.get("features")
         url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol={}&apikey={}'.format(ticker, key)
         response = requests.get(url)
 
