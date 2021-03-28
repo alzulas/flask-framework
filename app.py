@@ -46,9 +46,9 @@ def about():
 def result():
    if request.method == 'POST':
       result = request.form
-      plot = make_graph(ticker_name, type_of_graph)
-      script, div = components(plot)
-      return render_template("result.html",result = result, the_div=div, the_script=script)
+      #plot = make_graph(ticker_name, type_of_graph)
+      #script, div = components(plot)
+      return render_template("result.html",result = result)#, the_div=div, the_script=script)
 
 if __name__ == '__main__':
   app.run(port=33507)
