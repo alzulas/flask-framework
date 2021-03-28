@@ -7,5 +7,5 @@ flask
 jinja2
 pip
 simplejson
-dotenv
+python-dotenv
 json
