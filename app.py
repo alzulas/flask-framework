@@ -41,6 +41,7 @@ def result():
 
         df_API.index = pd.to_datetime(df_API.index, format='%Y/%m/%d')
         df_API[type_of_graph] = pd.to_numeric(df_API[type_of_graph])
+        df_API.head()
 
         x = df_API.index.tolist()
         y = df_API[type_of_graph].tolist()
@@ -53,6 +54,7 @@ def result():
         )
         p.line(x, y, line_width=2)
         script, div = components(p)
+        p.show()
         return render_template("result.html",result = result, the_div=div, the_script=script)
 
 if __name__ == '__main__':
