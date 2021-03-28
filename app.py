@@ -23,7 +23,7 @@ def result():
     print(result.method)
     if request.method == 'POST':
         result = request.form
-        print(result)
+        #print(result)
         #plot = make_graph(ticker_name, type_of_graph)
         #script, div = components(plot)
         ticker = request.args.get("ticker")
