@@ -20,11 +20,13 @@ def about():
 
 @app.route('/result',methods = ['POST', 'GET'])
 def result():
+    print(result.method)
     if request.method == 'POST':
         result = request.form
+        print(result)
         #plot = make_graph(ticker_name, type_of_graph)
         #script, div = components(plot)
-        ticker = request.args.get("ticker", None)
+        ticker = request.args.get("ticker")
         key = os.environ['VANTAGEAPI']
         url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol={}&apikey={}'.format(ticker, key)
         response = requests.get(url)
@@ -51,7 +53,7 @@ def result():
         )
         p.line(x, y, line_width=2)
         script, div = components(p)
-        return render_template("result.html",result = result, the_div=div, the_script=script)
+        return render_template("result.html",result = result)#, the_div=div, the_script=script)
 
 if __name__ == '__main__':
     app.run(port=33507)
