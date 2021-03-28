@@ -9,11 +9,9 @@ from bokeh.plotting import figure, show
 
 app = Flask(__name__)
 
-def make_graph(ticker_name, type_of_graph)
+def make_graph(ticker, type_of_graph)
 
-    config = dotenv_values(".env")
-    key = config['VANTAGEAPI']
-    ticker = ticker_name
+    key = VANTAGEAPI
     url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol={}&apikey={}'.format(ticker, key)
     response = requests.get(url)
 
