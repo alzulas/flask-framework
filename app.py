@@ -6,7 +6,6 @@ import pandas as pd
 from bokeh.plotting import figure, show
 from bokeh.embed import components, server_document
 from bokeh.models import HoverTool
-from bokeh.templates import RESOURCES
 import os
 #import alpha_vantage# import make_graph
 
@@ -56,13 +55,7 @@ def result():
         p.line(x, y, line_width=2)
         p.add_tools(HoverTool())
         script, div = components(p)
-        plot_resources = RESOURCES.render(
-            js_raw=INLINE.js_raw,
-            css_raw=INLINE.css_raw,
-            js_files=INLINE.js_files,
-            css_files=INLINE.css_files,
-        )
-        return render_template("result.html",result = result, the_div=div, the_script=script, plot_resources=plot_resources)
+        return render_template("result.html",result = result, the_div=div, the_script=script)
 
 if __name__ == '__main__':
     app.run(port=33507)
