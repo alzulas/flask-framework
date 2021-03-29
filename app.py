@@ -3,7 +3,7 @@ import requests
 import json
 from dotenv import dotenv_values
 import pandas as pd
-from bokeh.plotting import figure, show, line
+from bokeh.plotting import figure, show
 from bokeh.embed import components, server_document
 from bokeh.models import HoverTool
 import os
