@@ -7,7 +7,7 @@ from bokeh.plotting import figure, show
 from bokeh.embed import components, server_document, file_html
 from bokeh.models import HoverTool
 from bokeh.resources import CDN
-from jinja import Template
+#from jinja import Template
 import os
 #import alpha_vantage# import make_graph
 
