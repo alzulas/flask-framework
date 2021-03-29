@@ -6,6 +6,7 @@ import pandas as pd
 from bokeh.plotting import figure, show
 from bokeh.embed import components, server_document
 from bokeh.models import HoverTool
+from bokeh.templates import RESOURCES
 import os
 #import alpha_vantage# import make_graph
 
