@@ -4,7 +4,7 @@ import json
 from dotenv import dotenv_values
 import pandas as pd
 from bokeh.plotting import figure, show
-from bokeh.embed import components, server_document, file_html
+from bokeh.embed import components, server_document, file_html, json_item
 from bokeh.models import HoverTool
 from bokeh.resources import CDN
 #from jinja import Template
