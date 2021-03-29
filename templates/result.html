@@ -64,14 +64,20 @@
         </div>
       </div>
     </div>
-    {{ the_div|safe }}
+    <!--{{ the_div|safe }}
     <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.5.min.js"></script>
     <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.5.min.js"></script>
     {{ the_script|safe }}
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <div id="visualization">Example Visualization</div>
+    <script>
+    fetch('/visual')
+      .then(function(response) {return response.json();})
+      .then(function(item) {return Bokeh.embed.embed_item(item);})
+    </script>
   </body>
 </html>

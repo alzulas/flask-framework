@@ -6,6 +6,8 @@ import pandas as pd
 from bokeh.plotting import figure, show
 from bokeh.embed import components, server_document
 from bokeh.models import HoverTool
+from bokeh.resources import CDN
+from jinja import Template
 import os
 #import alpha_vantage# import make_graph
 
@@ -54,8 +56,8 @@ def result():
         )
         p.line(x, y, line_width=2)
         p.add_tools(HoverTool())
-        script, div = components(p)
-        return render_template("result.html",result = result, the_div=div, the_script=script)
+        #script, div = components(p)
+        return render_template("result.html",result = result, json.dumps(json_item(p, "visualization")))
 
 if __name__ == '__main__':
     app.run(port=33507)
