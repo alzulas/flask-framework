@@ -58,8 +58,8 @@ def result():
         p.add_tools(HoverTool())
         script, div = components(p)
         item_text = json.dumps(json_item(p, "myplot"))
-        item = json.parse(item_text);
-        Bokeh.embed.embed_item(item);
+        #item = JSON.parse(item_text);
+        #Bokeh.embed.embed_item(item);
         return render_template("result.html",result = result, the_div=div, the_script=script)
 
 if __name__ == '__main__':
