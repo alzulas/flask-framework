@@ -15,11 +15,12 @@
     <style>
     body {
       padding-top: 70px;
+      text-align: center; /* !!! */
     }
     .centered {
-    margin: 0 auto;
-    text-align: left;
-    width: 800px;
+        margin: 0 auto;
+        text-align: left;
+        width: 800px;
     }
     </style>
   </head>
@@ -61,12 +62,14 @@
         </div>
       </div>
     </div>
-    {{ the_div|safe }}
-    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.2.0.min.js"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.2.0.min.js"
-        crossorigin="anonymous"></script>
-    {{ the_script|safe }}
+    <div id="graphs" class="centered">
+        {{ the_div|safe }}
+        <script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.2.0.min.js"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.2.0.min.js"
+            crossorigin="anonymous"></script>
+        {{ the_script|safe }}
+    </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
